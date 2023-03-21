@@ -1,0 +1,23 @@
+.calc {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+}
+
+.display {
+    background-color: grey;
+    height: 40px;
+    width: 200px;
+}
+
+.digits {
+    display: grid;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+}

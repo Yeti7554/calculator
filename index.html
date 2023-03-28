@@ -8,32 +8,35 @@
     <body>
 
         <div class="calc">
-            <div class="display" id="display"> </div>
+            <div class="display" id="display">
+            <div class="currentNum">0</div>
+            <div class="previousNum"></div>
+            </div>
 
             <div class="buttons">
                 
                 <div class="digits">
                     <div class="row">
-                        <button onclick="populate(1)">1</button>
-                        <button onclick="populate(2)">2</button>
-                        <button onclick="populate(3)">3</button>
+                        <button class="numbers">1</button>
+                        <button class="numbers">2</button>
+                        <button class="numbers">3</button>
                     </div>
                    
                     <div class="row">
-                        <button onclick="populate(4)">4</button>
-                        <button onclick="populate(5)">5</button>
-                        <button onclick="populate(6)">6</button>
+                        <button class="numbers">4</button>
+                        <button class="numbers">5</button>
+                        <button class="numbers">6</button>
                     </div>
                     
                     <div class="row">
-                        <button onclick="populate(7)">7</button>
-                        <button onclick="populate(8)">8</button>
-                        <button onclick="populate(9)">9</button>
+                        <button class="numbers">7</button>
+                        <button class="numbers">8</button>
+                        <button class="numbers">9</button>
                     </div>
 
                     <div class="row">
-                        <button>C</button>
-                        <button onclick="populate(0)">0</button>
+                        <button class="reset">C</button>
+                        <button class="numbers">0</button>
                         <button>=</button>
                     </div>
                     

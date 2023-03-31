@@ -3,24 +3,30 @@
 let currentNumber = "";
 let previousNumber = "";
 let operator = "";
+let answer = "";
 
 const current = document.querySelector(".currentNum");
 const previous = document.querySelector(".previousNum");
 
 
 
-function operate(a, b) {
-    if (operator === "+"){
-        return a+b} 
-    else if (operator === "-") {
-        return a-b;
+function operate() {
+    if (operator == "+"){
+        answer = previousNumber+currentNumber;
+        current.textContent = answer; 
     }
-    else if (operator === "/") {
-        return a/b;
-    } else if (operator === "*") {
-        return a*b;
+    else if (operator == "-") {
+        answer = previousNumber-currentNumber;
+        current.textContent = answer; 
+    }
+    else if (operator == "/") {
+        answer = previousNumber/currentNumber;
+        current.textContent = answer; 
+    } else if (operator == "*") {
+        answer = previousNumber*currentNumber;
+        current.textContent = answer; 
     } else {
-        return "error";
+        current.textContent = "error"; 
     }
 
 }
@@ -37,6 +43,7 @@ function operate(a, b) {
 
 
 const numButtons = document.querySelectorAll(".numbers");
+const operatorButtons = document.querySelectorAll(".operatorButtons")
 
 const clear = document.querySelector(".reset")
 
@@ -60,5 +67,55 @@ function handleNumber(number) {
 clear.addEventListener("click", (e) => {
     currentNumber = "";
     previousNumber = "";
+    answer = "";
     current.textContent = 0;
+    previous.textContent = "";
+})
+
+// Now build the operating function
+
+
+operatorButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        previousNumber = currentNumber;
+        currentNumber = "";
+        previous.textContent = previousNumber;
+        current.textContent = 0; 
+    })
+})
+
+function chooseOperator(op) {
+    operator = op;
+}
+
+
+
+const equals = document.querySelector(".equal");
+
+equals.addEventListener("click", (e) => {
+    {
+        if (operator == "+"){
+            answer = parseInt(previousNumber)+ parseInt(currentNumber);
+            current.textContent = answer; 
+            previous.textContent = "";
+        }
+        else if (operator == "-") {
+            answer = parseInt(previousNumber) - parseInt(currentNumber);
+            current.textContent = answer; 
+            previous.textContent = "";
+        }
+        else if (operator == "/") {
+            answer = parseInt(previousNumber)/parseInt(currentNumber);
+            current.textContent = answer; 
+            previous.textContent = "";
+        } else if (operator == "*") {
+            answer = parseInt(previousNumber) * parseInt(currentNumber);
+            current.textContent = answer; 
+            previous.textContent = "";
+        } else {
+            current.textContent = "ERROR"; 
+            previous.textContent = "";
+        }
+    
+    }
 })

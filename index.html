@@ -9,8 +9,9 @@
 
         <div class="calc">
             <div class="display" id="display">
-            <div class="currentNum">0</div>
-            <div class="previousNum"></div>
+                <div class="previousNum"></div>
+                <div class="currentNum">0</div>
+       
             </div>
 
             <div class="buttons">
@@ -37,16 +38,16 @@
                     <div class="row">
                         <button class="reset">C</button>
                         <button class="numbers">0</button>
-                        <button>=</button>
+                        <button class="equal">=</button>
                     </div>
                     
                 </div>
 
                 <div class="operators">
-                    <button>+</button>
-                    <button>-</button>
-                    <button>x</button>
-                    <button>/</button>
+                    <button class="operatorButtons" onclick="chooseOperator('+')">+</button>
+                    <button class="operatorButtons" onclick="chooseOperator('-')">-</button>
+                    <button class="operatorButtons"  onclick="chooseOperator('*')">x</button>
+                    <button class="operatorButtons" onclick="chooseOperator('/')">/</button>
                 </div>
 
             </div>
